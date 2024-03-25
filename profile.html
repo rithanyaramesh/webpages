@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile - XYZ University</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+            background-color: #D8BFD8; /* Light violet background color */
+            color: #000000; /* Set text color to black for better visibility on the background */
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .pink-row {
+            background-color: #FFC0CB;
+            text-align: center;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .grey-links {
+            text-align: center;
+            color: grey;
+            margin-top: 10px;
+        }
+        h2 {
+            font-weight: bold;
+            text-align: center;
+        }
+        img {
+           width: 100%;
+            max-width: 150px; /* Adjust the maximum width as needed */
+            height: auto;
+            margin-top: 10px;
+        }
+        form {
+            margin-top: 20px;
+            text-align: start;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+        #student-info p {
+            text-align: start;
+        }
+	#profile-details {
+            text-align: start;
+            margin-top: 20px;
+        }
+	form {
+            margin-top: 20px;
+            text-align: start;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+        }
+        form label {
+            margin-bottom: 5px;
+        }
+        #bio {
+            text-align: start;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        XYZ University
+    </header>
+    <nav>
+        <a href="#">About</a> |
+        <a href="#">Contact</a>
+    </nav>
+    <div class="pink-row">
+        Rithanya - 21z243 (B.E CSE) Sem:6
+    </div>
+<nav>
+    <div class="grey-links">
+        <p>
+            <a href="#">Home</a> |
+            <a href="#">Exam</a> |
+            <a href="#">Education</a> |
+            <a href="#">Fee</a> |
+            <a href="#">Profile</a>
+        </p>
+    </div>
+</nav>
+    <section id="student-info">
+        <h2>Student Information</h2>
+        <!-- Image -->
+        <img src="profile.jpg" alt="Student Image">
+     <div id="profile-details">
+            <p><strong>Name:</strong> RITHANYA K R</p>
+            <p><strong>Rollno:</strong> 21Z243</p>
+            <p><strong>Programme:</strong> BE COMPUTER SCIENCE & ENGINEERING</p>
+            <p><strong>Batch:</strong> 2021</p>
+            <p><strong>Resident-Status:</strong> HOSTELLER</p>
+            <p><strong>Address:</strong> 23-1, Rainbow nagar, Erode road, Karur-639008</p>
+            <p><strong>Mobile:</strong> 934529733</p>
+            <p><strong>Email:</strong> rithanyaramesh27@gmail.com</p>
+	     <p id="bio"><strong>Bio:</strong> ...</p>
+            <br> 
+        </div>
+
+        <!-- Hyperlinks -->
+        <p>Visit the <a href="timetable.html" target="_blank">university website</a> for more information.</p>
+        <p>Check your <a href="grades.html">grades</a> online.</p>
+    </section>
+    <section id="student-form">
+        <h2>Update Profile Information</h2>
+        <!-- Form -->
+        <form action="update_profile.php" method="post">
+            
+            <label for="Username">Username:</label>
+            <input type="Username" id="Username" name="Username" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <label for="bio">Bio:</label>
+            <textarea id="bio" name="bio" rows="4" cols="50"></textarea>
+            <br>
+            <input type="submit" value="Update Profile">
+        </form>
+    </section>
+    <section id="student-video">
+        <h2>Student Introduction Video</h2>
+        <!-- Video -->
+       <iframe width="560" height="315" src="https://www.youtube.com/embed/5FLtmVe8XNk?si=8hkEQ0HXhUOukrVP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </section>
+    <footer>
+        &copy; 2023 XYZ University. All rights reserved.
+    </footer>
+</body>
+</html>
