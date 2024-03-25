@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XYZ University Timetable</title>
+<style>
+/* Resetting some default styles for better consistency */
+body, h1, h2, h3, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
+margin: 0;
+padding: 0;
+}
+/* Basic styles */
+body {
+font-family: 'Arial', sans-serif;
+margin: 20px;
+background-color: #f4f4f4;
+color: #333;
+}
+/* Header */
+header {
+text-align: center;
+background-color: #333;
+color: white;
+padding: 15px;
+font-size: 28px;
+font-weight: bold;
+margin-bottom: 20px;
+}
+/* Navigation */
+nav {
+text-align: center;
+margin-bottom: 20px;
+
+}
+nav a {
+text-decoration: none;
+color: #333;
+margin: 0 15px;
+font-weight: bold;
+}
+nav a:hover {
+text-decoration: underline;
+}
+/* Pink row */
+.pink-row {
+background-color: #FFC0CB;
+text-align: center;
+padding: 10px;
+margin-top: 10px;
+}
+/* Grey links */
+.grey-links {
+text-align: center;
+color: grey;
+margin-top: 10px;
+}
+.grey-links a {
+text-decoration: none;
+color: grey;
+margin: 0 15px;
+}
+.grey-links a:hover {
+text-decoration: underline;
+}
+/* Timetable section */
+#timetable-section {
+margin-top: 20px;
+
+}
+#timetable-heading {
+text-align: center;
+font-weight: bold;
+margin-top: 20px;
+}
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 20px;
+table-layout: fixed; /* Ensures equal cell sizes */
+}
+th, td {
+border: 1px solid #ddd;
+text-align: center;
+padding: 15px;
+background-color: #f9f9f9;
+width: calc(100% / 6); /* Equal width for each cell */
+}
+th {
+background-color: #333;
+color: white;
+}
+.description {
+margin-top: 20px;
+text-align: center;
+color: #555;
+}
+/* Additional Information section */
+#additional-info-section {
+margin-top: 40px;
+text-align: left; /* Align the text to the left for better readability */
+}
+#additional-info-section article {
+
+margin-bottom: 20px;
+}
+#additional-info-section ul,
+#additional-info-section ol {
+margin-left: 20px;
+}
+/* Sign Out section */
+#sign-out-section {
+text-align: right;
+margin-top: 20px;
+}
+#sign-out-section button {
+background-color: #333;
+color: white;
+padding: 10px 20px;
+cursor: pointer;
+border: none;
+border-radius: 5px;
+}
+#sign-out-section button:hover {
+background-color: #555;
+}
+/* Footer */
+footer {
+text-align: center;
+margin-top: 20px;
+background-color: #333;
+color: white;
+padding: 15px;
+}
+/* Backgrounds */
+body {
+background-color: #f4f4f4;
+}
+
+/* Borders */
+table,
+th,
+td {
+border: 1px solid #ddd;
+}
+/* Margins */
+body,
+header,
+.pink-row,
+.grey-links,
+#timetable-section,
+#additional-info-section,
+#sign-out-section,
+footer {
+margin: 20px;
+}
+/* Padding */
+body,
+th,
+td,
+.description,
+#sign-out-section button {
+padding: 15px;
+}
+/* Height, Width */
+header,
+.pink-row,
+.grey-links,
+#timetable-heading,
+table,
+th,
+td,
+.description,
+
+#additional-info-section,
+#sign-out-section {
+width: 100%;
+}
+
+/* Box Model */
+th,
+td {
+box-sizing: border-box;
+}
+/* Outline */
+th,
+td {
+outline: 1px solid #ddd;
+}
+/* Text */
+body,
+p,
+.description,
+#additional-info-section {
+text-align: center;
+color: #333;
+}
+</style>
+<script>
+function signOut() {
+alert('You have been signed out.');
+}
+
+function updateClock() {
+var now = new Date();
+var hours = now.getHours();
+var minutes = now.getMinutes();
+var seconds = now.getSeconds();
+
+// Format the time with leading zeros
+hours = hours < 10 ? '0' + hours : hours;
+minutes = minutes < 10 ? '0' + minutes : minutes;
+seconds = seconds < 10 ? '0' + seconds : seconds;
+
+var timeString = hours + ':' + minutes + ':' + seconds;
+document.getElementById('clock').innerHTML = timeString;
+
+// Update the clock every second
+setTimeout(updateClock, 1000);
+}
+
+function changeTimetableColor() {
+var timetableTable = document.querySelector('#timetable-section table');
+timetableTable.style.backgroundColor = getRandomColor();
+}
+
+function addNewRow() {
+var timetableTable = document.querySelector('#timetable-section table tbody');
+var newRow = timetableTable.insertRow(timetableTable.rows.length);
+
+// Example: Add data to the new row
+var days = ['Saturday', 'Sunday']; // You can customize the days
+for (var i = 0; i < 6; i++) {
+var cell = newRow.insertCell(i);
+cell.innerHTML = days[i];
+}
+}
+
+function getRandomColor() {
+var letters = '0123456789ABCDEF';
+var color = '#';
+for (var i = 0; i < 6; i++) {
+
+color += letters[Math.floor(Math.random() * 16)];
+}
+return color;
+}
+
+// Start the clock when the page loads
+window.onload = function () {
+updateClock();
+};
+</script>
+</head>
+<body>
+<header>XYZ University</header>
+<nav>
+<a href="#">About</a> |
+<a href="#">Contact</a>
+</nav>
+<div class="pink-row">
+<p>Rithanya - 21z243 (B.E CSE) Sem:6</p>
+</div>
+<div class="grey-links">
+<p>
+<a href="#">Home</a> |
+<a href="#">Exam</a> |
+<a href="#">Education</a> |
+<a href="#">Fee</a> |
+<a href="#">Profile</a>
+</p>
+</div>
+<section id="timetable-section">
+<h2 id="timetable-heading">Timetable</h2>
+<div id="clock"></div> <!-- Display the clock -->
+<table onmouseover="changeTimetableColor()"> <!-- Added onmouseover event -->
+<table>
+
+<thead>
+<tr>
+<th></th>
+<th>9:00 AM - 10:00 AM</th>
+<th>10:00 AM - 11:00 AM</th>
+<th>11:00 AM - 12:00 PM</th>
+<th>1:00 PM - 2:00 PM</th>
+<th>2:00 PM - 3:00 PM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Monday</td>
+<td>Math</td>
+<td>History</td>
+<td>Biology</td>
+<td>English</td>
+<td>Physics</td>
+</tr>
+<tr>
+<td>Tuesday</td>
+<td>Chemistry</td>
+<td>Geography</td>
+<td>Computer Science</td>
+<td>Physical Education</td>
+<td>English</td>
+</tr>
+<tr>
+<td>Wednesday</td>
+<td>Physics</td>
+<td>English</td>
+<td>Computer Science</td>
+<td>Geography</td>
+<td>Math</td>
+
+</tr>
+<tr>
+<td>Thursday</td>
+<td>Biology</td>
+<td>Math</td>
+<td>Chemistry</td>
+<td>Physical Education</td>
+<td>History</td>
+</tr>
+<tr>
+<td>Friday</td>
+<td>History</td>
+<td>Physics</td>
+<td>Computer Science</td>
+<td>English</td>
+<td>Biology</td>
+</tr>
+</tbody>
+</table>
+<div class="description">
+<p>This timetable is for the academic year 2023-2024. Please note that the schedule may be subject to changes.</p>
+</div>
+</section>
+<section id="additional-info-section">
+<h2>Additional Information</h2>
+<article>
+<h3>University Policies</h3>
+<ul>
+<li>Attendance is mandatory for all classes.</li>
+<li>Refer to the university handbook for academic regulations.</li>
+<li>Library hours: Monday to Friday, 9:00 AM - 5:00 PM.</li>
+</ul>
+</article>
+<article>
+
+<h3>Important Dates</h3>
+<ol>
+<li>First Day of Classes: September 5, 2023</li>
+<li>Midterm Exams: November 15-18, 2023</li>
+<li>Final Exams: December 10-20, 2023</li>
+</ol>
+</article>
+</section>
+<section id="sign-out-section">
+<button onclick="signOut()">Sign Out</button>
+</section>
+<footer>
+&copy; 2023 XYZ University. All rights reserved.
+</footer>
+</body>
+</html>
